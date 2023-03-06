@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
     def index
-        render json: Product.all, status: :ok
+        render json: {products:Product.all}, status: :ok
     end
 
     def show
@@ -37,4 +37,5 @@ class ProductsController < ApplicationController
 
     def product_params
         params.permit(:name, :price, :image)
+end
 end
